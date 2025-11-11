@@ -13,15 +13,8 @@
         android:theme="@style/Theme.Nicestart">
 
         <activity
-            android:name=".SignUp"
-            android:exported="true"
-            android:theme="@style/Base.Theme.Nicestart"
-            android:parentActivityName=".Login"/>
-
-        <activity
-            android:name=".Login"
-            android:exported="true"
-            android:theme="@style/Theme.Nicestart.NoActionBar">
+            android:name=".Splash"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -29,9 +22,27 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".SignUp"
+            android:exported="true"
+            android:parentActivityName=".Login"
+            android:theme="@style/Base.Theme.Nicestart" />
+        <activity
+            android:name=".Login"
+            android:exported="true"
+            android:theme="@style/Theme.Nicestart.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
