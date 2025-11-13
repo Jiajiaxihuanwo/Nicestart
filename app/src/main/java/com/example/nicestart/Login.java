@@ -3,12 +3,13 @@ package com.example.nicestart;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.bumptech.glide.Glide;
 
 public class Login extends AppCompatActivity {
 
@@ -18,13 +19,27 @@ public class Login extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
+        ImageView foton = findViewById(R.id.backViewLogin);
+        Glide.with(this)
+                .load(R.drawable.montana)
+                .centerCrop()
+                .into(foton);
     }
 
+
     public void openMain(View v){
-        Intent intent = new Intent(Login.this,MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).
-                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
+        EditText nom = findViewById(R.id.nombre);
+        String nombre = nom.getText().toString();
+        EditText contra= findViewById(R.id.contraseña);
+        String contraseña = contra.getText().toString();
+        if(!nombre.isEmpty()&&!contraseña.isEmpty()){
+            Intent intent = new Intent(Login.this,MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).
+                    addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            intent.putExtra("NOMBRE", nombre);
+            startActivity(intent);
+        }
     }
     public void openSignUp(View v){
         Intent intent = new Intent(Login.this,SignUp.class);
