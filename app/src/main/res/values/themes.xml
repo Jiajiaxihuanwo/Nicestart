@@ -16,5 +16,8 @@
     <style name="Theme.Nicestart.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
     </style>
+    <style name="Theme.Nicestart.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
+    </style>
+    <style name="Theme.Nicestart" parent="Base.Theme.Nicestart" />
 </resources>
