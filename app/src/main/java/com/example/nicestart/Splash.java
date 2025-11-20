@@ -3,6 +3,8 @@ package com.example.nicestart;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +26,10 @@ public class Splash extends AppCompatActivity {
                 .load(R.drawable.ski)
                 .centerCrop()
                 .into(foton);
+
+        ImageView thunder = findViewById(R.id.logo);
+        Animation myanim = AnimationUtils.loadAnimation(this,R.anim.blink);
+        thunder.startAnimation(myanim);
     }
     private void openApp(){
         Handler handler = new Handler();
