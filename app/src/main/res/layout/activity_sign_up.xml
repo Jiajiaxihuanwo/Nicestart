@@ -35,6 +35,7 @@
         app:startIconDrawable="@drawable/hombre">
 
         <EditText
+            android:id="@+id/nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0.65"
@@ -51,10 +52,10 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@id/titulo1"
-        app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/email">
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0.65"
@@ -74,6 +75,7 @@
         app:startIconDrawable="@drawable/llave">
 
         <EditText
+            android:id="@+id/contrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:alpha="0.65"
@@ -86,7 +88,7 @@
         android:id="@+id/button1"
         style="@style/button1"
         android:text="Sign Up"
-        android:onClick="openMain"
+        android:onClick="openPerfile"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/buttoncustom"
         app:layout_constraintEnd_toEndOf="@id/guideline_right"

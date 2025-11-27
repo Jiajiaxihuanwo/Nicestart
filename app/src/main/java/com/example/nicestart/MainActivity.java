@@ -32,20 +32,21 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        //长按菜单
         TextView mycontext = findViewById(R.id.myText);
         registerForContextMenu(mycontext);
-
+        //下滑刷新
         swipeLayout = findViewById(R.id.myswipe);
         swipeLayout.setOnRefreshListener(mOnRefreshListener);
-//        ImageView profileImage = findViewById(R.id.profileImage);
-//        Glide.with(this)
-//                .load(R.drawable.xinbo)
-//                .circleCrop()
-//                .into(profileImage);
-//
-//        String username = getIntent().getStringExtra("NOMBRE");
-//        TextView nom = findViewById(R.id.username);
-//        nom.setText( username);
+    //        ImageView profileImage = findViewById(R.id.profileImage);
+    //        Glide.with(this)
+    //                .load(R.drawable.xinbo)
+    //                .circleCrop()
+    //                .into(profileImage);
+    //
+    //        String username = getIntent().getStringExtra("NOMBRE");
+    //        TextView nom = findViewById(R.id.username);
+    //        nom.setText( username);
     }
 
     protected SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
@@ -56,12 +57,11 @@ public class MainActivity extends AppCompatActivity {
             swipeLayout.setRefreshing(false);
         }
     };
-
+    //长按的选择
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         getMenuInflater().inflate(R.menu.menu_context, menu);
     }
-
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.item1) {
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
+    //顶部菜单
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_appbar,menu);

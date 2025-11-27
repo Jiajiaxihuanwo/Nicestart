@@ -69,12 +69,16 @@
         android:id="@+id/button1"
         style="@style/button1"
         android:text="Login"
-        android:onClick="openMain"
+
+        android:onClick="openPerfile"
+
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/buttoncustom"
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@id/titulo2" />
+        <!--//用 margin：格子和格子
+		    //用padding，格子里面的字-->
 
     <Button
         android:id="@+id/button2"

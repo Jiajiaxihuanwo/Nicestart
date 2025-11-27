@@ -17,4 +17,13 @@
         <item name="android:layout_marginTop">24dp</item>
         <item name="android:radius">8dp</item>
     </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 隐藏状态栏（包含TopBar的系统栏） -->
+        <item name="android:windowFullscreen">true</item>
+        <!-- 可选：隐藏导航栏（底部的虚拟按键栏） -->
+        <!-- <item name="android:windowNavigationBarHidden">true</item> -->
+        <!-- 优化启动页背景，避免白屏 -->
+        <item name="android:windowBackground">@null</item>
+    </style>
 </resources>

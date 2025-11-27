@@ -13,11 +13,24 @@
         <item name="android:elevation">0dp</item>
     </style>
 
-    <style name="Theme.Nicestart.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-
+    <style name="Theme.Nicestart.ActionBar" parent="Theme.Material3.DayNight">
+        <item name="background">@color/black</item>
     </style>
+
     <style name="Theme.Nicestart.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
     </style>
     <style name="Theme.Nicestart" parent="Base.Theme.Nicestart" />
+
 </resources>
+
+<!--<activity
+            android:name=".reflesh"
+            android:exported="false"
+            android:theme="@style/Theme.Nicestart.ActionBar"/>
+
+
+<style name="Theme.Nicestart.ActionBar" parent="Theme.Material3.DayNight">
+        <item name="background">@color/black</item>
+</style>
+            -->

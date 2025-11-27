@@ -22,6 +22,10 @@ public class Splash extends AppCompatActivity {
         openApp();
 
         ImageView foton = findViewById(R.id.backView);
+
+        //这里放了背景图片
+        // 需要implementation 'com.github.bumptech.glide:glide:4.16.0'
+        //    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
         Glide.with(this)
                 .load(R.drawable.ski)
                 .centerCrop()

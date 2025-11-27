@@ -1,0 +1,38 @@
+package com.example.nicestart;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import com.bumptech.glide.Glide;
+
+public class perfile extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_perfile);
+        ImageView perfil = findViewById(R.id.foto_perfil);
+        TextView txt = findViewById(R.id.t1);
+
+        Glide.with(this).load(R.drawable.guapo).circleCrop().into(perfil);
+        String nom =getIntent().getStringExtra("NOMBRE");
+        txt.setText(nom);
+    }
+
+    public void openMain(View v){
+        Intent intent =new Intent(this,MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).//para limpiar
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+}
