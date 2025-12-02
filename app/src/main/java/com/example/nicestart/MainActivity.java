@@ -2,6 +2,8 @@ package com.example.nicestart;
 
 import static kotlinx.coroutines.android.HandlerDispatcherKt.Main;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.ContentView;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -21,6 +24,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -79,6 +83,43 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_appbar,menu);
         return true;
+    }
+
+    public void showAlertDialogButtonClicked(MainActivity mainActivity) {
+
+        // setup the alert builder
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+
+//        //el dialogo estandar tiene título/icono pero podemos sustituirlo por un XML a medida
+        builder.setTitle("Achtung!");
+        builder.setMessage("Donde quieres ir?");
+        builder.setIcon(R.drawable.hombre);
+        builder.setCancelable(true);
+
+        // add the buttons
+        builder.setPositiveButton("Scrolling",(dialog,which)-> {
+                Intent intent = new Intent(MainActivity.this, Login.class);
+                Toast toast = Toast.makeText(this,"Scrolling",Toast.LENGTH_LONG);
+                toast.show();
+        });
+        builder.setNegativeButton("Do nothing", (dialog,which)-> {
+            dialog.dismiss();
+        });
+        builder.setNeutralButton("Other",  (dialog,which)-> {
+                System.exit(0);
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id==R.id.item113){
+            showAlertDialogButtonClicked(MainActivity.this);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

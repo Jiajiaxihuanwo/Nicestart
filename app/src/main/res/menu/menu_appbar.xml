@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/setting"
-        android:title="Setting"
-        app:showAsAction="never"/>
+
 
     <item
         android:id="@+id/item1"
         android:title="Copy"
         android:icon="@drawable/outline_album_24"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom">
+
+        <menu>
+            <item
+                android:id="@+id/item111"
+                android:title="Copy"
+                app:showAsAction="ifRoom"/>
+
+            <item
+                android:id="@+id/item112"
+                android:title="Setting"
+                app:showAsAction="ifRoom"/>
+
+            <item
+                android:id="@+id/item113"
+                android:title="Explorer"
+                app:showAsAction="ifRoom"/>
+        </menu>
+    </item>
+
+
 </menu>
