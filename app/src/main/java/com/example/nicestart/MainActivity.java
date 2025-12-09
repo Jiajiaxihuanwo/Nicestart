@@ -9,6 +9,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,12 +30,13 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 public class MainActivity extends AppCompatActivity {
 
     private SwipeRefreshLayout swipeLayout;
+    private WebView miVisorWeb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
 
         //长按菜单
         TextView mycontext = findViewById(R.id.myText);
@@ -51,6 +53,20 @@ public class MainActivity extends AppCompatActivity {
     //        String username = getIntent().getStringExtra("NOMBRE");
     //        TextView nom = findViewById(R.id.username);
     //        nom.setText( username);
+
+        WebView webView = findViewById(R.id.vistaweb);
+        registerForContextMenu(webView);
+
+        miVisorWeb = (WebView) findViewById(R.id.vistaweb);
+        String html = "<html>" +
+                "<head><style>" +
+                "html, body { margin:0; padding:0; height:100%; overflow:hidden; }" +
+                "img { width:100%; height:100%; object-fit:cover; }" +   // ❤️ el equivalente a centerCrop
+                "</style></head>" +
+                "<body>" +
+                "<img src='https://thispersondoesnotexist.com' />" +
+                "</body></html>";
+        miVisorWeb.loadDataWithBaseURL(null, html, "text/html", "UTF-8", null);
     }
 
     protected SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
@@ -58,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         public void onRefresh() {
             Toast toast = Toast.makeText(MainActivity.this,"Hi here!",Toast.LENGTH_LONG);
             toast.show();
+            miVisorWeb.reload();
             swipeLayout.setRefreshing(false);
         }
     };
