@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Nicestart" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.Nicestart" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
     </style>
 
@@ -20,7 +20,9 @@
     <style name="Theme.Nicestart.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
     </style>
-    <style name="Theme.Nicestart" parent="Base.Theme.Nicestart" />
+    <style name="Theme.Nicestart" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+
 
 </resources>
 
