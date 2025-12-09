@@ -4,6 +4,8 @@
 ![sign up activity](img/Signup.png)   
 ![Main activity](img/mainActivity.png)   
 
+"Codigo Modificado por DANIELVEGA(PullRequest)"
+
 ![appbar activity](img/appbar.png)
 ![navegation activity](img/navegation.png)
 ![SwipeRefreshLayout activity](img/SwipeRefreshLayout.png)
