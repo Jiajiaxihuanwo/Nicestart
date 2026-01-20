@@ -4,7 +4,7 @@
     <item
         android:id="@+id/item1"
         android:title="Copy"
-        app:showAsAction="ifRoom"
+        app:showAsAction="ifRoom"/>
         />
 
     <item

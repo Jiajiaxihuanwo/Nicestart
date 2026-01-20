@@ -41,7 +41,7 @@
             android:alpha="0.65"
             android:background="@color/white"
             android:drawableLeft="@drawable/hombre"
-            android:hint="Username" />
+            android:hint="@string/username" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -61,7 +61,7 @@
             android:alpha="0.65"
             android:background="@color/white"
             android:drawableLeft="@drawable/email"
-            android:hint="Email" />
+            android:hint="@string/email" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -81,13 +81,13 @@
             android:alpha="0.65"
             android:background="@color/white"
             android:drawableLeft="@drawable/llave"
-            android:hint="Password" />
+            android:hint="@string/password" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/button1"
         style="@style/button1"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:onClick="openPerfile"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/buttoncustom"
@@ -97,7 +97,7 @@
 
     <Button
         android:id="@+id/button2"
-        android:text="Cancel"
+        android:text="@string/cancel"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:onClick="openLogin"

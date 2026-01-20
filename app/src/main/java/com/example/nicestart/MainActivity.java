@@ -9,6 +9,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,16 +58,23 @@ public class MainActivity extends AppCompatActivity {
         WebView webView = findViewById(R.id.vistaweb);
         registerForContextMenu(webView);
 
-        miVisorWeb = (WebView) findViewById(R.id.vistaweb);
+        miVisorWeb = findViewById(R.id.vistaweb);
+        miVisorWeb.getSettings().setJavaScriptEnabled(true);
+        miVisorWeb.getSettings().setLoadsImagesAutomatically(true);
+        miVisorWeb.getSettings().setDomStorageEnabled(true);
+        miVisorWeb.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+
         String html = "<html>" +
                 "<head><style>" +
                 "html, body { margin:0; padding:0; height:100%; overflow:hidden; }" +
-                "img { width:100%; height:100%; object-fit:cover; }" +   // ❤️ el equivalente a centerCrop
+                "img { width:100%; height:100%; object-fit:cover; }" +
                 "</style></head>" +
                 "<body>" +
                 "<img src='https://thispersondoesnotexist.com' />" +
                 "</body></html>";
-        miVisorWeb.loadDataWithBaseURL(null, html, "text/html", "UTF-8", null);
+
+        miVisorWeb.loadDataWithBaseURL("https://thispersondoesnotexist.com", html, "text/html", "UTF-8", null);
+
     }
 
     protected SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {

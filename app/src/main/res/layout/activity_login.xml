@@ -42,7 +42,7 @@
             android:alpha="0.65"
             android:background="@color/white"
             android:drawableLeft="@drawable/hombre"
-            android:hint="Username" />
+            android:hint="@string/username" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -62,13 +62,13 @@
             android:layout_height="wrap_content"
             android:alpha="0.65"
             android:background="@color/white"
-            android:drawableLeft="@drawable/llave"
-            android:hint="Password" />
+            android:drawableStart="@drawable/llave"
+            android:hint="@string/password" />
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/button1"
         style="@style/button1"
-        android:text="Login"
+        android:text="@string/login"
 
         android:onClick="openPerfile"
 
@@ -82,14 +82,15 @@
 
     <Button
         android:id="@+id/button2"
-        android:text="Sign up"
+        style="@style/buttonOutline"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:onClick="openSignUp"
+        android:text="@string/sign_up"
         app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@id/button1"
-        style="@style/buttonOutline" />
+        app:layout_constraintTop_toBottomOf="@id/button1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
